@@ -14,10 +14,14 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.27-alpine
-          ports:
-            - containerPort: 80
-          readinessProbe:
-            httpGet: { path: /, port: 80 }
-            initialDelaySeconds: 3
-            periodSeconds: 5
+          image: nginx
+          volumeMounts:
+            - name: web
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: web
+          configMap:
+            name: hello-index
+            items:
+              - key: index.html
+                path: index.html
