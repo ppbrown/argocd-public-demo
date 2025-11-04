@@ -2,10 +2,10 @@
 set -euo pipefail
 
 MYDIR=$(dirname $0)
-TOPDIR=$MYDIR/..
+TOPDIR=${MYDIR}/..
 
 # This only works after 10-install-argocd.sh has installed the Argo "Application" CRD
-kubectl apply -f $(TOPDIR)/argocd/application.yaml
+kubectl apply -f ${TOPDIR}/argocd/application.yaml
 
 echo "Application CR applied. Argo CD will reconcile shortly."
 echo "Optional: open the UI via 'kubectl -n argocd port-forward svc/argocd-server 8080:80'"
