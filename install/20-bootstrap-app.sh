@@ -4,8 +4,6 @@ set -euo pipefail
 MYDIR=$(dirname $0)
 TOPDIR=$(MYDIR)/..
 
-# The app gets deployed into this namespace (created automatically by Argo CD)
-# thanks to SyncOptions: CreateNamespace=true in application.yaml
 kubectl apply -f $(TOPDIR)/argocd/application.yaml
 
 echo "Application CR applied. Argo CD will reconcile shortly."
