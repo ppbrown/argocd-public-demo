@@ -6,7 +6,7 @@ spec:
   selector:
     app: hello
   ports:
-    - port: 8008
+    - port: 8088
       targetPort: 80
       protocol: TCP
   type: ClusterIP
