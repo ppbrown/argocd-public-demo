@@ -58,6 +58,20 @@ However, if you just want a quick peek at the situation, you can always just use
     NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/demo-app   1/1     1            1           24m
 
+# Demo Application webpage
+
+If you want to see the actual webpage served by the demo app, you can use the typical k8s ways to expose the service.
+Or if you are new to kubernetes, here's how to view it forwarded to your local workstation only:
+
+    kubectl -n demo-app port-forward svc/demo-app 8888:8888
+
+You may then point your desktop browser to   `http://localhost:8888` and you should see the simple output,
+
+"Started by ArgoCD"
+
+
+
+
     NAME                                  DESIRED   CURRENT   READY   AGE
     replicaset.apps/demo-app-74c957b7dd   1         1         1       24m
 
