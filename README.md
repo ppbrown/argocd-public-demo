@@ -58,6 +58,13 @@ However, if you just want a quick peek at the situation, you can always just use
     NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/demo-app   1/1     1            1           24m
 
+    NAME                                  DESIRED   CURRENT   READY   AGE
+    replicaset.apps/demo-app-74c957b7dd   1         1         1       24m
+
+(Keep in mind that it has the actual argocd services in the `argocd` namespace. Unlike
+ [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) there are a lot of them)
+
+
 # Demo Application webpage
 
 If you want to see the actual webpage served by the demo app, you can use the typical k8s ways to expose the service.
@@ -71,9 +78,3 @@ You may then point your desktop browser to   `http://localhost:8888` and you sho
 
 
 
-
-    NAME                                  DESIRED   CURRENT   READY   AGE
-    replicaset.apps/demo-app-74c957b7dd   1         1         1       24m
-
-(Keep in mind that it has the actual argocd services in the `argocd` namespace. Unlike
- [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) there are a lot of them)
