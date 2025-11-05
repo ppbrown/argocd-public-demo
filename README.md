@@ -8,6 +8,7 @@ in their own kubernetes cluster.
 (I also have something similar for [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) )
 
 This will get argocd up and managing a trivial demo app, with just the simple commands given below. No need to set up github credentials, since this is a publically readable repo.
+For a production install, you would usually want to use a private repo and credentials.
 
 Do note that this demo is CLI focused. You can certainly follow through on the standard instructions to get the GUI
 running, but I do not cover that here.
