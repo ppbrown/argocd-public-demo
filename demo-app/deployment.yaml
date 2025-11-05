@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: demo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello
+      app: demo-app
   template:
     metadata:
       labels:
-        app: hello
+        app: demo-app
     spec:
       containers:
         - name: nginx
@@ -21,7 +21,7 @@ spec:
       volumes:
         - name: web
           configMap:
-            name: hello-index
+            name: demo-app-index
             items:
               - key: index.html
                 path: index.html
