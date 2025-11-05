@@ -30,10 +30,8 @@ If you want to see Argo actually update from git changes GitOps style, you shoul
     kubectl create ns argocd
     kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-    # These don't actually do anything. If you want to see specific progress milestons, you can run these,
-    # otherwise just skip them!
-    kubectl -n argocd rollout status deploy/argocd-server --timeout=180s
-    kubectl -n argocd rollout status deploy/argocd-repo-server --timeout=180s
+    # This doesnt actually changeo anything. It just gives you a specific milestone you can use to validate that
+    # argocd properly installed
     kubectl -n argocd rollout status deploy/argocd-applicationset-controller --timeout=180s
 
     # Final "deploy this application through ArgoCD" step
