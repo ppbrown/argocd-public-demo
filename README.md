@@ -1,10 +1,11 @@
 # argocd-public-demo
 
-The purpose of this repo is to give people who are curious about ArgoCD, a way to quickly and easily see what its footprint is
-in their own kubernetes cluster, with a minimum of setup hassle or commitment.
+The purpose of this repo is to give a super-easy method to people who are curious about ArgoCD a way to quickly and easily see what its footprint is
+in their own kubernetes cluster.
+
 (I also have something similar for [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) )
 
-You can get argocd running a trivial demo app, with just two simple commands given below. No need to set up github credentials, since this is a publically readable repo.
+This will get argocd up and running a trivial demo app, with just the simple commands given below. No need to set up github credentials, since this is a publically readable repo.
 
 Do note that this demo is CLI focused. You can certainly follow through on the standard instructions to get the GUI
 running, but I do not cover that here.
@@ -20,17 +21,29 @@ Note that you can either run this directly from this repo, or fork it to your ow
 If you want to see Argo actually update from git changes GitOps style, you should fork it and run from there.
 
 ## Prep
-*  Clone the repo to your workstation
-* If you have cloned the repo to your own forked one, update the url in argocd/application.yaml if you have'nt already
 
-## Install scripts
-3. bash install/10-install-argocd.sh
-4. bash install/20-bootstrap-app.sh 
+* If you are working from your own forked version of my repo, update the url in [argocd/application.yaml](argocd/application.yaml) if you haven't already
+* Clone kthe repo to your workstation
 
+## Install STEPS
 
-That's all there is!
+    kubectl create ns argocd
+    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-# Status
+    # These don't actually do anything. If you want to see specific progress milestons, you can run these,
+    # otherwise just skip them!
+    kubectl -n argocd rollout status deploy/argocd-server --timeout=180s
+    kubectl -n argocd rollout status deploy/argocd-repo-server --timeout=180s
+    kubectl -n argocd rollout status deploy/argocd-applicationset-controller --timeout=180s
+
+    # Final "deploy this application through ArgoCD" step
+    kubectl apply -f argocd/application.yaml
+
+That's all there is! 
+
+If you are working from a forked version of this repo, any changes to it will automatically be picked up by Argo and activated in your cluster after a minute or two.
+
+# Demo Application Status
 
 ArgoCD has its own built in GUI (automatically installed), and an optional CLI (which you have to install manually)
 
