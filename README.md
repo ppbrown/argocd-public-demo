@@ -1,10 +1,13 @@
 # argocd-public-demo
 
-The purpose of this repo is to give people who are curious about ArgoCD, a way to quickly and easily try it out in their
-own kubernetes cluster, with a minimum of setup hassle.
+The purpose of this repo is to give people who are curious about ArgoCD, a way to quickly and easily see what its footprint is
+in their own kubernetes cluster, with a minimum of setup hassle.
 (I also have something similar for [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) )
 
-You can get argocd running a trivial demo app, with just two simpple commands given below
+You can get argocd running a trivial demo app, with just two simple commands given below.
+
+Do note that this demo is CLI focused. You can certainly follow through on the standard instructions to get the GUI
+running, but I do not cover that here.
 
 # Prerequisites
 
