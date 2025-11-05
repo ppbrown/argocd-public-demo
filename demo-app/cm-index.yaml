@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: hello-index
+  name: demo-app-index
 data:
   index.html: |
     Started by ArgoCD
