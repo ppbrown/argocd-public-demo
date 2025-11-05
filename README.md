@@ -1,11 +1,13 @@
 # argocd-public-demo
 
-The purpose of this repo is to give a super-easy method to people who are curious about ArgoCD a way to quickly and easily see what its footprint is
+The target audience for this repo is people who are curious about Argo CD, but have never "touched" it before.
+
+The purpose of this repo is to give them a super-easy method to quickly and easily see what its footprint is
 in their own kubernetes cluster.
 
 (I also have something similar for [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) )
 
-This will get argocd up and running a trivial demo app, with just the simple commands given below. No need to set up github credentials, since this is a publically readable repo.
+This will get argocd up and managing a trivial demo app, with just the simple commands given below. No need to set up github credentials, since this is a publically readable repo.
 
 Do note that this demo is CLI focused. You can certainly follow through on the standard instructions to get the GUI
 running, but I do not cover that here.
@@ -13,17 +15,16 @@ running, but I do not cover that here.
 # Prerequisites
 
 * You need your own fully working kubernetes cluster before trying to use this
-* You need a linux machine to run the install scripts
 
 # Installation
 
 Note that you can either run this directly from this repo, or fork it to your own repo.
-If you want to see Argo actually update from git changes GitOps style, you should fork it and run from there.
+If you want to see Argo actually update from git changes, GitOps style, you should fork it and run from there.
 
 ## Prep
 
 * If you are working from your own forked version of my repo, update the url in [argocd/application.yaml](argocd/application.yaml) if you haven't already
-* Clone kthe repo to your workstation
+* Clone the repo to your workstation
 
 ## Install STEPS
 
