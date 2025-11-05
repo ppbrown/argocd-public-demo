@@ -4,7 +4,7 @@ The purpose of this repo is to give people who are curious about ArgoCD, a way t
 in their own kubernetes cluster, with a minimum of setup hassle.
 (I also have something similar for [FluxCD](https://github.com/ppbrown/fluxcd-public-demo) )
 
-You can get argocd running a trivial demo app, with just two simple commands given below.
+You can get argocd running a trivial demo app, with just two simple commands given below. No need to set up github credentials, since this is a publically readable repo.
 
 Do note that this demo is CLI focused. You can certainly follow through on the standard instructions to get the GUI
 running, but I do not cover that here.
